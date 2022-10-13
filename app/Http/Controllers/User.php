@@ -42,6 +42,7 @@ class User extends Controller{
             return self::select($result); 
         }
     }
+
     public function getUserHomeInfo($email){
         return $result = $this->Model->getUserHomeInfo($email); 
    }

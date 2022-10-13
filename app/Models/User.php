@@ -18,11 +18,18 @@ class User{
         return $response;
     }
 
+    // 取得所有使用者包含role_id供WEB權限控管畫面使用
     public function getUsers(){
-        $sql = "select * from user";
+        $sql = "select user.name, user.id , role_id, home_id, role.name as role_name
+                from user
+                 left join user_role
+                  on user_role.user_id = user.id
+                 left join role
+                  on role.id = user_role.role_id";
         $response = DB::select($sql);
         return $response;
     }
+
     public function getUser($id){
         $sql = "select * from user where id=?";
         $args = array($id);

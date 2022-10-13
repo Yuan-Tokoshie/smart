@@ -47,5 +47,7 @@ $router->delete('/removeIntegrate','Integrate@removeIntegrate');
 $router->get('/getHomeSceneState/{scene_id}/{home_id}','Integrate@getHomeSceneState');
 $router->get('/getHomeScriptState/{script_id}/{home_id}','Integrate@getHomeScriptState');
 
+// 取得使用者
+$router->get('/getUser/{id}','User@getUser');
 $router->post('/changePassword','User@changePassword');
 $router->get('/getUserHomeRole','User@getUserHomeRole');
